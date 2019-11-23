@@ -1,11 +1,20 @@
 import React from 'react';
 
-const Footer = () => {
+const Footer = ({ prevPage, nextPage, page }) => {
   return (
     <footer className="Footer">
       <div>
-        <button className="Footer__Button">previous</button>
-        <button className="Footer__Button"> next</button>
+        <button
+          className="Footer__Button"
+          disabled={page === 1}
+          onClick={prevPage}
+        >
+          previous
+        </button>
+        {page}
+        <button className="Footer__Button" onClick={nextPage}>
+          next
+        </button>
       </div>
     </footer>
   );

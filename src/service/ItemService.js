@@ -2,8 +2,8 @@ import axios from 'axios';
 import * as Constants from '../constants';
 
 export class ItemService {
-  getItems() {
-    return axios.get(Constants.ITEM_API_URL).then(res => res);
+  getItems(page) {
+    return axios.get(`${Constants.ITEM_API_URL}?page=${page}`).then(res => res);
   }
 
   findItemByID(id) {
