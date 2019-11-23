@@ -1,10 +1,52 @@
 // Block__Element--Modifier
 
 body {
-  font-size: 62.5%;
+  font-size: 62.5%; // To retain accessibility and make REM calculations simpler
+}
+
+html,
+body,
+#root,
+.App,
+.Home {
+  height: 100%
 }
 
 .App {
   font-size: 1rem;
-  max-width: 1400px;
+  margin: 0 auto;
+  max-width: 87.5rem; // 1400px
+  padding: 1rem 2rem;
+}
+
+.Header {
+  text-align: center;
+}
+
+.Home {
+  display: flex;
+  flex-direction: column;
+}
+
+.Footer {
+  display: flex;
+  justify-content: center;
+  padding: .5rem;
+}
+
+.Footer__Button {
+  margin: .2rem;
+}
+
+.Table {
+  flex: 1 1 auto;
+}
+
+.TableRow--odd {
+  background-color: #fafafa;
+}
+
+.TableTools {
+  display: flex;
+  justify-content: flex-end;
 }
