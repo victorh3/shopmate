@@ -5,6 +5,7 @@
   },
   "extends": [
     "eslint:recommended",
+    "react-app",
     "plugin:prettier/recommended"
   ],
   "globals": {
