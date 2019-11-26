@@ -26,6 +26,11 @@ function App() {
       itemService.findItemByText(search).then(data => {
         setItems([...data.data]);
       });
+    else {
+      itemService.getItems(page).then(data => {
+        setItems([...data.data]);
+      });
+    }
   };
 
   useEffect(() => {
