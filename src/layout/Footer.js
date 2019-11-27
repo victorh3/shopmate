@@ -1,6 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ItemService } from '../service/ItemService';
+import { Store } from '../Store';
 
-const Footer = ({ prevPage, nextPage, page }) => {
+const Footer = () => {
+  const { state, dispatch } = useContext(Store);
+  const { page } = state;
+
+  const nextPage = () => {
+    return dispatch({
+      type: 'SET_PAGE',
+      payload: state.page + 1,
+    });
+  };
+
+  const prevPage = () => {
+    return dispatch({
+      type: 'SET_PAGE',
+      payload: state.page - 1,
+    });
+  };
+
   return (
     <footer className="Footer">
       <div>

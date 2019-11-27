@@ -2,24 +2,12 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
-const Home = ({
-  children,
-  prevPage,
-  nextPage,
-  page,
-  handleSearch,
-  search,
-  setSearch,
-}) => {
+const Home = ({ children }) => {
   return (
     <div className="Home">
-      <Header
-        handleSearch={handleSearch}
-        search={search}
-        setSearch={setSearch}
-      />
+      <Header />
       <div className="Table">{children}</div>
-      <Footer prevPage={prevPage} nextPage={nextPage} page={page} />
+      <Footer />
     </div>
   );
 };

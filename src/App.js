@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { ItemTable } from './components';
 import { ItemService } from './service/ItemService';
 import { Home } from './layout';
+import { Store } from './Store';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.scss';
@@ -9,46 +10,25 @@ import './App.scss';
 const itemService = new ItemService();
 
 function App() {
-  const [items, setItems] = useState([]);
-  const [page, setPage] = useState(1);
-  const [search, setSearch] = useState('');
-
-  const nextPage = () => {
-    setPage(page + 1);
-  };
-
-  const prevPage = () => {
-    if (page > 1) setPage(page - 1);
-  };
-
-  const handleSearch = () => {
-    if (search !== '')
-      itemService.findItemByText(search).then(data => {
-        setItems([...data.data]);
-      });
-    else {
-      itemService.getItems(page).then(data => {
-        setItems([...data.data]);
-      });
-    }
-  };
+  const { state, dispatch } = useContext(Store);
+  const { items, page } = state;
 
   useEffect(() => {
-    itemService.getItems(page).then(data => {
-      setItems([...data.data]);
-    });
-  }, [page]);
+    const fetchItems = async page => {
+      const data = await itemService.getItems(page);
+      return dispatch({
+        type: 'SET_ITEMS',
+        payload: data.data,
+      });
+    };
 
+    fetchItems(page);
+  }, [dispatch, page]);
+
+  console.log('App rendered');
   return (
     <div className="App">
-      <Home
-        search={search}
-        setSearch={setSearch}
-        handleSearch={handleSearch}
-        nextPage={nextPage}
-        page={page}
-        prevPage={prevPage}
-      >
+      <Home>
         <ItemTable items={items} />
       </Home>
     </div>

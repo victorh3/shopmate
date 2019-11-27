@@ -1,17 +1,13 @@
 import React, { Fragment } from 'react';
 import { TableTools } from '../components';
 
-const Header = ({ handleSearch, search, setSearch }) => {
+const Header = () => {
   return (
     <Fragment>
       <header className="Header">
         <h1>shopmate</h1>
       </header>
-      <TableTools
-        handleSearch={handleSearch}
-        search={search}
-        setSearch={setSearch}
-      />
+      <TableTools />
     </Fragment>
   );
 };

@@ -2,17 +2,18 @@ import axios from 'axios';
 import * as Constants from '../constants';
 
 export class ItemService {
-  getItems(page) {
-    return axios.get(`${Constants.ITEM_API_URL}?page=${page}`).then(res => res);
+  async getItems(page = 1) {
+    const res = await axios.get(`${Constants.ITEM_API_URL}?page=${page}`);
+    return res;
   }
 
-  findItemByID(id) {
-    return axios.get(`${Constants.ITEM_API_URL}/${id}`).then(res => res);
+  async findItemByID(id) {
+    const res = await axios.get(`${Constants.ITEM_API_URL}/${id}`);
+    return res;
   }
 
-  findItemByText(query) {
-    return axios
-      .get(`${Constants.ITEM_API_URL}?query=${query}`)
-      .then(res => res);
+  async findItemByText(query) {
+    const res = await axios.get(`${Constants.ITEM_API_URL}?query=${query}`);
+    return res;
   }
 }
