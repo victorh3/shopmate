@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/shopmate/static/css/main.aeb418a3.chunk.css",
+    "main.js": "/shopmate/static/js/main.df566456.chunk.js",
+    "main.js.map": "/shopmate/static/js/main.df566456.chunk.js.map",
+    "runtime-main.js": "/shopmate/static/js/runtime-main.c693b153.js",
+    "runtime-main.js.map": "/shopmate/static/js/runtime-main.c693b153.js.map",
+    "static/css/2.c6a15fb7.chunk.css": "/shopmate/static/css/2.c6a15fb7.chunk.css",
+    "static/js/2.50abed48.chunk.js": "/shopmate/static/js/2.50abed48.chunk.js",
+    "static/js/2.50abed48.chunk.js.map": "/shopmate/static/js/2.50abed48.chunk.js.map",
+    "index.html": "/shopmate/index.html",
+    "precache-manifest.46a76c80edeaafedd2bc0f21b53100fc.js": "/shopmate/precache-manifest.46a76c80edeaafedd2bc0f21b53100fc.js",
+    "service-worker.js": "/shopmate/service-worker.js",
+    "static/css/2.c6a15fb7.chunk.css.map": "/shopmate/static/css/2.c6a15fb7.chunk.css.map",
+    "static/css/main.aeb418a3.chunk.css.map": "/shopmate/static/css/main.aeb418a3.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c693b153.js",
+    "static/css/2.c6a15fb7.chunk.css",
+    "static/js/2.50abed48.chunk.js",
+    "static/css/main.aeb418a3.chunk.css",
+    "static/js/main.df566456.chunk.js"
+  ]
+}
