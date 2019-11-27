@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { ItemService } from '../service/ItemService';
 import { Store } from '../Store';
 
 const Footer = () => {

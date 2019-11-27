@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Store } from '../../Store';
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
 import Table, { Column } from 'react-virtualized/dist/commonjs/Table';
+import Loader from 'react-loader';
 import 'react-virtualized/styles.css';
 
 const ItemTable = ({ items }) => {
+  const { state } = useContext(Store);
+  const { loaded } = state;
+
   const rowClassName = ({ index }) => {
     if (index < 0) {
       return 'TableRow--header';
@@ -14,7 +19,7 @@ const ItemTable = ({ items }) => {
 
   const rowGetter = ({ index }) => items[index];
 
-  return (
+  return loaded ? (
     <AutoSizer>
       {({ width, height }) => (
         <Table
@@ -33,6 +38,8 @@ const ItemTable = ({ items }) => {
         </Table>
       )}
     </AutoSizer>
+  ) : (
+    <Loader />
   );
 };
 

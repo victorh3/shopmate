@@ -4,7 +4,7 @@ export const Store = createContext();
 
 const initialState = {
   items: [],
-  loading: false,
+  loaded: true,
   page: 1,
   search: '',
 };
@@ -14,7 +14,7 @@ function reducer(state, action) {
     case 'SET_ITEMS':
       return { ...state, items: action.payload };
     case 'SET_LOADING':
-      return { ...state, loading: action.payload };
+      return { ...state, loaded: action.payload };
     case 'SET_PAGE':
       return { ...state, page: action.payload };
     case 'SET_SEARCH':
