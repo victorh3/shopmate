@@ -12,11 +12,11 @@ const initialState = {
 function reducer(state, action) {
   switch (action.type) {
     case 'SET_ITEMS':
-      return { ...state, items: action.payload };
-    case 'SET_LOADING':
+      return { ...state, items: action.payload, loaded: true };
+    case 'SET_LOADED':
       return { ...state, loaded: action.payload };
     case 'SET_PAGE':
-      return { ...state, page: action.payload };
+      return { ...state, page: action.payload, loaded: false };
     case 'SET_SEARCH':
       return { ...state, search: action.payload };
     default:

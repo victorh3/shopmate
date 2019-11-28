@@ -25,7 +25,6 @@ function App() {
     fetchItems(page);
   }, [dispatch, page]);
 
-  console.log('App rendered');
   return (
     <div className="App">
       <Home>

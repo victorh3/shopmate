@@ -29,7 +29,7 @@ const Footer = () => {
         >
           previous
         </button>
-        {page}
+        <span className="Footer__CurrentPage">{page}</span>
         <button className="Footer__Button" onClick={nextPage}>
           next
         </button>
