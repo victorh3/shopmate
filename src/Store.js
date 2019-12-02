@@ -4,7 +4,7 @@ export const Store = createContext();
 
 const initialState = {
   items: [],
-  loaded: true,
+  loaded: false,
   page: 1,
   search: '',
 };
