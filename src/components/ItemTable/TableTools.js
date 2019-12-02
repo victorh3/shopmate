@@ -16,6 +16,10 @@ const TableTools = () => {
   };
 
   const handleSearch = async () => {
+    dispatch({
+      type: 'SET_LOADED',
+      payload: false,
+    });
     if (search !== '') {
       const res = await itemService.findItemByText(search);
       return dispatch({
