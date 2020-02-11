@@ -6,7 +6,7 @@ import Loader from 'react-loader';
 import 'react-virtualized/styles.css';
 
 const ItemTable = ({ items }) => {
-  const { state } = useContext(Store);
+  const { state, dispatch } = useContext(Store);
   const { loaded } = state;
 
   const rowClassName = ({ index }) => {
@@ -19,18 +19,26 @@ const ItemTable = ({ items }) => {
 
   const rowGetter = ({ index }) => items[index];
 
+  const open = ({ rowData }) => {
+    return dispatch({
+      type: 'SET_MODAL',
+      payload: { showModal: true, modalData: { ...rowData } },
+    });
+  };
+
   return loaded ? (
     <AutoSizer>
       {({ width, height }) => (
         <Table
           className="ItemTable"
-          width={width}
-          height={height}
           headerHeight={50}
+          height={height}
+          onRowClick={open}
           rowClassName={rowClassName}
-          rowHeight={50}
           rowCount={items.length}
           rowGetter={rowGetter}
+          rowHeight={50}
+          width={width}
         >
           <Column label="Brand" dataKey="brand_name" width={100} flexGrow={1} />
           <Column label="Name" dataKey="name" width={100} flexGrow={2} />

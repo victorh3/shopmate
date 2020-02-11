@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import { ItemTable } from './components';
+import { ItemTable, Modal } from './components';
 import { ItemService } from './service/ItemService';
 import { Home } from './layout';
 import { Store } from './Store';
@@ -29,6 +29,7 @@ function App() {
     <div className="App">
       <Home>
         <ItemTable items={items} />
+        <Modal />
       </Home>
     </div>
   );

@@ -7,6 +7,8 @@ const initialState = {
   loaded: false,
   page: 1,
   search: '',
+  showModal: false,
+  modalData: {},
 };
 
 function reducer(state, action) {
@@ -19,6 +21,12 @@ function reducer(state, action) {
       return { ...state, page: action.payload, loaded: false };
     case 'SET_SEARCH':
       return { ...state, search: action.payload };
+    case 'SET_MODAL':
+      return {
+        ...state,
+        showModal: action.payload.showModal,
+        modalData: action.payload.modalData,
+      };
     default:
       return state;
   }
