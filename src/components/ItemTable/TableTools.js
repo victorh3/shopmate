@@ -34,10 +34,22 @@ const TableTools = () => {
     }
   };
 
+  const handleAdd = () => {
+    return dispatch({
+      type: 'SET_MODAL',
+      payload: { showModal: true, modalData: {} },
+    });
+  };
+
   return (
     <div className="TableTools">
       <input value={search} onChange={handleOnChange} />
-      <button onClick={handleSearch}>Search</button>
+      <button onClick={handleSearch} disabled={!search.trim()}>
+        Search
+      </button>
+      <button onClick={handleAdd}>
+        <i className="far fa-plus-square"></i>
+      </button>
     </div>
   );
 };

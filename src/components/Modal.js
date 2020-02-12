@@ -4,7 +4,7 @@ import { Dialog } from '@reach/dialog';
 import VisuallyHidden from '@reach/visually-hidden';
 import '@reach/dialog/styles.css';
 
-const Modal = ({ data }) => {
+const Modal = () => {
   const { state, dispatch } = useContext(Store);
   const { showModal, modalData } = state;
 
@@ -17,7 +17,6 @@ const Modal = ({ data }) => {
 
   const { gtin14, brand_name } = modalData;
 
-  console.log(modalData);
   return (
     <Dialog isOpen={showModal} onDismiss={close} aria-label="Edit item">
       <button className="close-button" onClick={close}>
