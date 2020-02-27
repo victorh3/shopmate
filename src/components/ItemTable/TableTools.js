@@ -43,10 +43,10 @@ const TableTools = () => {
 
   return (
     <div className="TableTools">
-      <input value={search} onChange={handleOnChange} />
+      {/* <input value={search} onChange={handleOnChange} />
       <button onClick={handleSearch} disabled={!search.trim()}>
         Search
-      </button>
+      </button> */}
       <button onClick={handleAdd}>
         <i className="far fa-plus-square"></i>
       </button>

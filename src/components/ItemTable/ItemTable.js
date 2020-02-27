@@ -41,8 +41,10 @@ const ItemTable = ({ items }) => {
           width={width}
         >
           <Column label="Brand" dataKey="brand_name" width={100} flexGrow={1} />
-          <Column label="Name" dataKey="name" width={100} flexGrow={2} />
-          <Column label="Size" dataKey="size" width={100} flexGrow={1} />
+          <Column label="Name" dataKey="name" width={100} flexGrow={1} />
+          <Column label="Price" dataKey="price" width={100} flexGrow={1} />
+          <Column label="On Sale" dataKey="on_sale" width={100} flexGrow={0} />
+          <Column label="Notes" dataKey="notes" width={100} flexGrow={2} />
         </Table>
       )}
     </AutoSizer>
