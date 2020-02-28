@@ -7,6 +7,11 @@ const URL =
     : Constants.ITEM_API_URL;
 
 export class ItemService {
+  async createItem(payload) {
+    const res = await axios.post(`${URL}/create`, payload);
+    return res;
+  }
+
   async getItems(page = 1) {
     const res = await axios.get(`${URL}`);
     return res;
