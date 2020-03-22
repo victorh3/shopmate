@@ -4,14 +4,6 @@ body {
   font-size: 62.5%; // To retain accessibility and make REM calculations simpler
 }
 
-html,
-body,
-#root,
-.App,
-.Home {
-  height: 100%
-}
-
 .App {
   font-size: 1rem;
   margin: 0 auto;
@@ -42,15 +34,8 @@ body,
   margin: 0 .4rem;
 }
 
-.Table {
-  flex: 1 1 auto;
-}
-
-.TableRow--odd {
-  background-color: #fafafa;
-}
-
 .TableTools {
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 1rem;
 }
