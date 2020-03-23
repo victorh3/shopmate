@@ -5,8 +5,6 @@ export const Store = createContext();
 const initialState = {
   items: [],
   loaded: false,
-  page: 1,
-  search: '',
   showModal: false,
   modalData: {},
 };
@@ -17,10 +15,6 @@ function reducer(state, action) {
       return { ...state, items: action.payload, loaded: true };
     case 'SET_LOADED':
       return { ...state, loaded: action.payload };
-    case 'SET_PAGE':
-      return { ...state, page: action.payload, loaded: false };
-    case 'SET_SEARCH':
-      return { ...state, search: action.payload };
     case 'SET_MODAL':
       return {
         ...state,

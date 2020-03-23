@@ -12,7 +12,7 @@ export class ItemService {
     return res;
   }
 
-  async getItems(page = 1) {
+  async getItems() {
     const res = await axios.get(`${URL}`);
     return res;
   }
